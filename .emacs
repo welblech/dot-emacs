@@ -1,6 +1,9 @@
-(add-to-list 'load-path "/Users/Shared/emacs")
-;;(add-to-list 'load-path "D:/site/lisp")
-;;(add-to-list 'load-path "D:/site/lisp/ess/lisp")
+(mapcar					; extend load-path
+ (lambda (file) (if (file-exists-p file) (add-to-list 'load-path file)))
+ '("/Users/Shared/emacs"		; MAC OS
+   "D:/site/lisp"			; work
+   "D:/site/lisp/ess/lisp"
+   ))
 (setq-default
  ctl-arrow nil				; display control codes in octal
  fill-column 78
